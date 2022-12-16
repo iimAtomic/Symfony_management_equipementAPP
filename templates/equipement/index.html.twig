@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block title %}
+    Hello EquipementController!
+
+{% endblock %}
+
+{% block body %}
+    <head>
+        <title>Bootstrap Exemple</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <div class="container alert-dark">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Quantité</th>
+            </tr>
+            </thead>
+            {% for entry in entries %}
+                <tbody>
+                <tr>
+                    <td><a href="/equipement/{{ entry.id }}">{{ entry.nom }}</a></td>
+                    <td>{{ entry.quantite }}</td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+
+
+
+
+
+

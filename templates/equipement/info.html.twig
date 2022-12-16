@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %}
+    Hello EquipementController!
+
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid w-75 mt-5 d-flex flex-column alert-dark">
+        <div class="d-flex flex-column gap-4">
+            <div class="d-flex flex-row w-100 gap-4">
+                <div class="d-flex flex-column w-50 gap-4">
+                    <div class="border p-2 border-3 d-flex w-100 flex-column gap-2">
+                        <h5>Nom</h5>
+                        {{ entry.nom }}
+                    </div>
+                    <div class="border p-2 border-3 d-flex w-100 flex-column gap-2">
+                        <h5>Marque</h5>
+                        {{ entry.marque }}
+                    </div>
+                </div>
+                <div class="d-flex flex-column w-50 gap-4">
+                    <div class="border p-2 border-3 d-flex w-100 flex-column gap-2">
+                        <h5>Quantité</h5>
+                        {{ entry.quantite }}
+                    </div>
+                    <div class="border p-2 border-3 d-flex w-100 flex-column gap-2">
+                        <h5>Prix</h5>
+                        {{ entry.prix }} €
+                    </div>
+                </div>
+            </div>
+            <div class="border p-2 border-3 d-flex w-100 flex-column gap-2">
+                <h5>Description</h5>
+                <p>
+                    {% if entry.description is empty %}
+                        {{ 'Aucune description' }}
+                    {% else %}
+                        {{ entry.description }}
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
